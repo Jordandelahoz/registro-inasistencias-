@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro de Inasistencias</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <h1>Registro de Inasistencias</h1>
+
+  <!-- Auth -->
+  <section id="authSection" class="card">
+    <h2>Iniciar Sesión</h2>
+    <form id="loginForm">
+      <label for="email">Correo</label>
+      <input type="email" id="email" placeholder="tu@correo.com" required />
+
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" placeholder="••••••" required />
+
+      <button type="submit">Entrar</button>
+    </form>
+    <p id="loginMsg" class="muted"></p>
+  </section>
+
+  <section id="topbar" class="hidden">
+    <span id="userInfo"></span>
+    <button id="logoutBtn">Cerrar sesión</button>
+  </section>
+
+  <!-- Vista Alumno -->
+  <section id="alumnoView" class="hidden card">
+    <h2>Registrar Inasistencia (Alumno)</h2>
+    <form id="inasistenciaForm">
+      <label for="nombre">Nombre del alumno</label>
+      <input type="text" id="nombre" required />
+
+      <label for="grado">Grado</label>
+      <input type="text" id="grado" required />
+
+      <label for="fecha">Fecha</label>
+      <input type="date" id="fecha" required />
+
+      <label for="motivo">Motivo</label>
+      <select id="motivo">
+        <option value="Injustificada">Injustificada</option>
+        <option value="Justificada">Justificada</option>
+      </select>
+
+      <label for="observacion">Observaciones</label>
+      <textarea id="observacion" rows="3" placeholder="Ej: Estaba enfermo" required></textarea>
+
+      <button type="submit">Registrar Inasistencia</button>
+    </form>
+
+    <h3>Mis Inasistencias</h3>
+    <table id="tablaMias">
+      <thead>
+        <tr>
+          <th>Alumno</th>
+          <th>Grado</th>
+          <th>Fecha</th>
+          <th>Motivo</th>
+          <th>Observaciones</th>
+          <th>Creada</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <!-- Vista Profesor -->
+  <section id="profeView" class="hidden card">
+    <h2>Listado de Inasistencias (Profesor)</h2>
+    <table id="tablaInasistencias">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Alumno</th>
+          <th>Grado</th>
+          <th>Fecha</th>
+          <th>Motivo</th>
+          <th>Observaciones</th>
+          <th>Creado por</th>
+          <th>Fecha creación</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <button id="eliminarTodo" class="limpiar-btn">Eliminar todas las inasistencias</button>
+  </section>
+
+  <script src="/script.js"></script>
+</body>
+</html>
